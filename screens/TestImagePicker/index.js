@@ -26,7 +26,7 @@ const TestImagePicker = () => {
           return (
             <Image
               style={{height: 100, width: 100}}
-              source={{url: thisElement.path}}
+              source={{uri: thisElement.path}}
             />
           );
         })}
@@ -52,6 +52,30 @@ const TestImagePicker = () => {
             verticalAlign: 'auto',
           }}>
           Pick from gallery
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          ImagePicker.openCamera({
+            width: 300,
+            height: 400,
+            cropping: true,
+          }).then(image => {
+            console.log(image);
+            if (image) {
+              setImageArray([...imageArray, image]);
+            }
+          });
+        }}
+        style={{backgroundColor: 'red', height: 40, margin: 10}}>
+        <Text
+          style={{
+            color: 'white',
+            textAlign: 'center',
+            verticalAlign: 'auto',
+          }}>
+          Pick from camera
         </Text>
       </TouchableOpacity>
     </View>

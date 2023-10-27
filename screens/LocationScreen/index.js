@@ -4,7 +4,7 @@ import {LocationHelper} from '../../helper';
 
 const LocationScreen = () => {
   useEffect(() => {
-    LocationHelper.fetchLocation(
+    LocationHelper.checkLocationPermission(
       () => {
         LocationHelper.fetchLocation(
           locationObject => {

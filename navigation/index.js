@@ -1,7 +1,12 @@
 import {useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/native';
-import {FirstScreen, TestImagePicker, LocationScreen} from '../screens';
+import {
+  FirstScreen,
+  TestImagePicker,
+  LocationScreen,
+  MapScreen,
+} from '../screens';
 import NotificationHelper from '../helper/NotificationHelper';
 
 const Stack = createNativeStackNavigator();
@@ -18,6 +23,11 @@ const Navigator = props => {
   const getScreens = () => {
     return (
       <Stack.Group>
+        <Stack.Screen
+          name="mapScreen"
+          component={MapScreen}
+          options={{title: ' Map Screen'}}
+        />
         <Stack.Screen
           name="locationScreen"
           component={LocationScreen}
