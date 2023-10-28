@@ -8,8 +8,8 @@ const MapScreen = () => {
       <MapView
         style={{...StyleSheet.absoluteFillObject}}
         region={{
-          latitude: 53.55,
-          longitude: 2.4333,
+          latitude: 51.53064042295979,
+          longitude: -0.44188440595809003,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
         }}></MapView>
